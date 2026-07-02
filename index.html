@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheFrennzy — Press Kit 2025–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A0A0A;color:#f7f7f7;font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;max-width:100vw}
+
+/* ═══════════════════════════════════════
+   HEADER / NAV
+═══════════════════════════════════════ */
+.header{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);border-bottom:2px solid rgba(255,215,0,0.15);display:flex;align-items:center;justify-content:space-between;padding:10px 20px;gap:14px;backdrop-filter:blur(16px)}
+.header-brand{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:#FFD700;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:8px}
+.header-brand span{color:#FFD700}
+.header-tag{font-size:9px;color:#FFD700;letter-spacing:1px;text-transform:uppercase;opacity:0.7}
+
+/* ═══════════════════════════════════════
+   ARTIST HERO
+═══════════════════════════════════════ */
+.ahero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;border-bottom:2px solid rgba(255,215,0,0.12)}
+.ahero-left{padding:40px 32px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,#0A0A0A 0%,#111010 100%)}
+.ahero-right{position:relative;overflow:hidden;background:#0d0d0d;background-size:contain;background-repeat:no-repeat;background-position:center center;transition:background-image .4s ease;border-left:2px solid rgba(255,215,0,0.1)}
+.ahero-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 50%);pointer-events:none}
+.ahero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;background:rgba(0,0,0,.65);border:1px solid rgba(255,215,0,0.2);color:#FFD700;width:38px;height:38px;border-radius:50%;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;line-height:1;padding:0}
+.ahero-arrow:hover{background:#FFD700;color:#0A0A0A;border-color:#FFD700;box-shadow:0 0 16px rgba(255,215,0,.4)}
+.ahero-arrow-left{left:14px}
+.ahero-arrow-right{right:14px}
+.ahero-city-tag{position:absolute;bottom:16px;left:16px;z-index:5;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#FFD700;background:rgba(0,0,0,.75);padding:3px 10px;border-radius:2px;border:1px solid rgba(255,215,0,0.15)}
+.hero-dots{display:flex;justify-content:center;gap:8px;padding:10px 0;background:#0A0A0A;border-bottom:2px solid rgba(255,215,0,0.1)}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,215,0,0.1);cursor:pointer;transition:all .3s}
+.hero-dot.active{background:#FFD700;border-color:#FFD700;box-shadow:0 0 10px rgba(255,215,0,.5)}
+
+.a-pill{display:inline-block;font-size:8px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:14px;align-self:flex-start;background:#FFD700;color:#0A0A0A}
+.a-name{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:.85;letter-spacing:-1px;color:#FFFFFF;margin-bottom:10px}
+.a-alias{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:14px;color:#FFD700}
+.a-quote{font-size:13px;color:#FFFFFF;line-height:1.65;max-width:480px;border-left:3px solid #FFD700;padding-left:14px;font-style:italic}
+
+/* ═══════════════════════════════════════
+   MUSIC CTA
+═══════════════════════════════════════ */
+.music-cta-section{padding:28px 32px;background:linear-gradient(135deg,rgba(255,215,0,0.08) 0%,rgba(0,0,0,0.6) 100%);border-bottom:2px solid rgba(255,215,0,0.1);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.music-cta-left{display:flex;align-items:center;gap:14px}
+.music-cta-icon{width:44px;height:44px;border-radius:50%;background:#FFD700;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0A0A0A;font-size:20px}
+.music-cta-text{font-size:12px;color:#FFFFFF;line-height:1.5}
+.music-cta-text strong{color:#FFD700;font-weight:700}
+.music-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#FFD700;color:#0A0A0A;border:none;padding:12px 24px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;text-decoration:none;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.music-cta-btn:hover{background:#FFE44D;color:#0A0A0A;transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.3)}
+
+/* ═══════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════ */
+.sec{padding:26px 32px;border-bottom:2px solid rgba(255,215,0,0.08)}
+.sec-label{font-size:8px;letter-spacing:3px;text-transform:uppercase;font-weight:800;margin-bottom:16px;color:#FFD700}
+
+/* BIO */
+.bio-short{font-size:15px;line-height:1.8;max-width:800px;color:#FFFFFF;text-align:justify}
+.bio-long{font-size:12px;line-height:1.85;color:#FFFFFF;max-width:700px;margin-top:14px;display:none;text-align:justify}
+.bio-long.open{display:block}
+.bio-long p{margin-bottom:11px}
+.read-btn{background:transparent;border:1px solid rgba(255,215,0,0.2);color:#FFD700;padding:6px 16px;border-radius:2px;font-size:10px;cursor:pointer;margin-top:12px;letter-spacing:1px;text-transform:uppercase;font-family:'Inter',sans-serif;transition:all .15s}
+.read-btn:hover{border-color:#FFD700;color:#0A0A0A;background:#FFD700}
+
+/* RELEASE BANNER */
+.rel-banner{display:flex;align-items:stretch;border-bottom:2px solid rgba(255,215,0,0.1)}
+.rel-bar{width:5px;flex-shrink:0;background:#FFD700}
+.rel-body{padding:14px 24px;display:flex;align-items:center;gap:16px;width:100%;flex-wrap:wrap}
+.rel-tag{font-size:8px;font-weight:800;letter-spacing:2px;text-transform:uppercase;flex-shrink:0;color:#FFD700}
+.rel-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#FFD700;letter-spacing:.5px}
+.rel-info{font-size:11px;color:#FFFFFF;margin-left:auto}
+
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid rgba(255,215,0,0.1)}
+.stat-box{padding:18px 20px;border-right:1px solid rgba(255,215,0,0.08)}
+.stat-box:last-child{border-right:none}
+.stat-plat{font-size:8px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;color:#FFD700}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#FFD700;line-height:1.1}
+.stat-sub{font-size:9px;color:#FFFFFF;margin-top:2px}
+
+/* PALETTE */
+.pal-row{display:flex;gap:4px;margin-top:10px}
+.pal-swatch{height:28px;flex:1;border-radius:2px;border:1px solid rgba(255,255,255,0.07);position:relative}
+.pal-swatch:hover::after{content:attr(data-hex);position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);font-size:8px;background:#222;color:#FFFFFF;padding:2px 6px;border-radius:2px;white-space:nowrap;z-index:10;font-family:'Inter',sans-serif}
+.pal-note{font-size:10px;color:#FFFFFF;margin-top:4px;font-style:italic;text-align:justify}
+
+/* LINKS */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:5px}
+.link-item{background:#1a1a1a;border:1px solid rgba(255,215,0,0.08);border-radius:2px;padding:9px 13px;display:flex;align-items:center;gap:8px;text-decoration:none;transition:all .15s}
+.link-item:hover{border-color:rgba(255,215,0,.5);background:rgba(255,215,0,0.08)}
+.link-plat{font-size:8px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#FFD700;min-width:56px}
+.link-handle{font-size:10px;color:#FFFFFF;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.link-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-left:auto;background:#FFD700}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+.a-footer{padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,215,0,0.1);background:#0A0A0A}
+.a-footer-brand{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,215,0,.2)}
+.a-footer-contact{font-size:10px;color:#FFFFFF}
+.a-footer-contact span{color:#FFD700}
+
+/* ═══════════════════════════════════════
+   WHATSAPP FLOATING BUTTON
+═══════════════════════════════════════ */
+@keyframes wp-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6),0 4px 16px rgba(37,211,102,.4)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0),0 4px 16px rgba(37,211,102,.4)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0),0 4px 16px rgba(37,211,102,.4)}}
+@keyframes wp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .25s,box-shadow .25s;border:none;text-decoration:none;animation:wp-pulse 2.5s ease-in-out infinite,wp-float 4s ease-in-out infinite}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.55);animation-play-state:paused}
+.whatsapp-float svg{width:32px;height:32px;fill:#fff}
+.whatsapp-float::after{content:'Contactar por WhatsApp';position:absolute;right:70px;background:#1a1a1a;color:#f7f7f7;font-size:11px;padding:8px 14px;border-radius:4px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s;font-family:'Inter',sans-serif;border:1px solid rgba(255,255,255,0.08)}
+.whatsapp-float:hover::after{opacity:1}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .ahero{grid-template-columns:1fr}
+  .ahero-right{height:340px;border-left:none;border-top:2px solid rgba(255,215,0,0.1)}
+  .a-name{font-size:52px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-box{border-bottom:1px solid rgba(255,215,0,0.08)}
+  .links-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+  .music-cta-section{flex-direction:column;align-items:flex-start;gap:12px}
+  .music-cta-btn{width:100%;justify-content:center}
+}
+@media(max-width:600px){
+  .header{padding:8px 12px;gap:8px}
+  .header-brand{font-size:14px;letter-spacing:1px}
+  .a-name{font-size:42px}
+  .ahero-left{padding:24px 16px}
+  .ahero-right{height:260px}
+  .a-quote{font-size:12px}
+  .bio-short{font-size:13px}
+  .sec{padding:20px 16px}
+  .a-footer{flex-direction:column;gap:6px;padding:16px 16px;text-align:center}
+  .links-grid{grid-template-columns:1fr}
+  .whatsapp-float{bottom:16px;right:16px;width:52px;height:52px}
+  .whatsapp-float svg{width:28px;height:28px}
+  .whatsapp-float::after{display:none}
+  .music-cta-section{padding:20px 16px;flex-direction:column;align-items:flex-start;gap:10px}
+  .music-cta-btn{width:100%;justify-content:center;padding:12px 16px;font-size:10px}
+  .music-cta-text{font-size:11px}
+  .music-cta-icon{width:36px;height:36px;font-size:16px}
+  .stat-num{font-size:20px}
+}
+@media(max-width:400px){
+  .a-name{font-size:34px}
+  .ahero-right{height:220px}
+}
+@media(pointer:coarse){
+  .read-btn,.music-cta-btn{min-height:40px;padding:12px 24px}
+  .ahero-arrow{width:44px;height:44px;font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+   HEADER
+═══════════════════════════════ -->
+<header class="header">
+  <div class="header-brand">
+    TheFrennzy <span>· PRESS KIT</span>
+  </div>
+  <div class="header-tag">2025–2026</div>
+</header>
+
+<!-- ═══════════════════════════════
+   HERO
+═══════════════════════════════ -->
+<section class="ahero">
+  <div class="ahero-left">
+    <div class="a-pill">R&B / Trap / Rap / Hip Hop / Reguetón / Reggae / Afrobeat / Funk / Neo Soul</div>
+    <h1 class="a-name">TheFrennzy</h1>
+    <div class="a-alias">— "Apasionado y loco" —</div>
+    <p class="a-quote">"yo no hago una sola canción tranquila — todas tienen que sentirse peligrosas, aunque hablen de amor."</p>
+  </div>
+  <div class="ahero-right" id="hero-right" style="background-image:url('images/01.jpg')">
+    <div class="ahero-grad"></div>
+    <button class="ahero-arrow ahero-arrow-left" id="arrow-left" aria-label="Anterior foto">&lsaquo;</button>
+    <button class="ahero-arrow ahero-arrow-right" id="arrow-right" aria-label="Siguiente foto">&rsaquo;</button>
+    <div class="ahero-city-tag">Cali, Colombia</div>
+  </div>
+</section>
+
+<div class="hero-dots" id="hero-dots">
+  <!-- dots generados dinámicamente -->
+  <span class="hero-dot active" data-index="0"></span>
+  <span class="hero-dot" data-index="1"></span>
+  <span class="hero-dot" data-index="2"></span>
+  <span class="hero-dot" data-index="3"></span>
+</div>
+
+<!-- ═══════════════════════════════
+   MUSIC CTA
+═══════════════════════════════ -->
+<section class="music-cta-section">
+  <div class="music-cta-left">
+    <div class="music-cta-icon">▶</div>
+    <div class="music-cta-text">
+      Escucha a <strong>TheFrennzy</strong> en YouTube — Dale clic y ponla a sonar 🔊
+    </div>
+  </div>
+  <a class="music-cta-btn" id="music-cta-btn" href="https://youtube.com/@thefrennzy0811" target="_blank" rel="noreferrer">▶ Ver en YouTube</a>
+</section>
+
+<!-- ═══════════════════════════════
+   BIOGRAFÍA
+═══════════════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Biografía</div>
+  <p class="bio-short">TheFrennzy es compositor y cantante de Cali, Colombia. Funde afrobeat, reggaetón y trap con una voz que cruza el ad-lib de Kanye West con la melancolía de Future. Apasionado y loco — así se firma, así suena.</p>
+  <div class="bio-long" id="bio-long">
+    <p>TheFrennzy nació en Cali con una contradicción ya instalada: la ciudad que le enseñó devoción también le enseñó peligro, y su música nunca decidió quedarse con una sola. <strong>Compositor y cantante</strong>, construye su sonido en el cruce entre el calor del afrobeat, el groove del reggaetón y la frialdad calculada del trap — una mezcla que suena a fiesta con la luz apagada.</p>
+    <p>Su nombre ya circula entre la nueva generación urbana caleña: colaboraciones como <strong>"No te vayas"</strong> junto a Luis08 El Humildoso lo ubican dentro de un círculo que está reescribiendo lo que significa hacer música urbana fuera de las disqueras grandes, esquina por esquina.</p>
+    <p>Se declara apasionado y loco — su frase de cabecera, escrita como quien firma una promesa — y se nota en cómo cruza referencias: el ad-lib desbordado de Kanye West, la melancolía en autotune de Future, y el calor rítmico del afrobeat, todo pasado por el filtro caleño. No busca encajar en un género. Busca que cada canción suene como una advertencia que también es una declaración de amor.</p>
+  </div>
+  <button class="read-btn" id="btn-bio" onclick="toggleBio()">Leer más ↓</button>
+</section>
+
+<!-- ═══════════════════════════════
+   ÚLTIMO LANZAMIENTO
+═══════════════════════════════ -->
+<section class="rel-banner">
+  <div class="rel-bar"></div>
+  <div class="rel-body">
+    <span class="rel-tag">Último lanzamiento</span>
+    <span class="rel-name">No te vayas (feat. Luis08 El Humildoso)</span>
+    <span class="rel-info">Disponible en plataformas digitales</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+   ESTADÍSTICAS
+═══════════════════════════════ -->
+<section class="stats-grid">
+  <div class="stat-box">
+    <div class="stat-plat">YouTube</div>
+    <div class="stat-num">---</div>
+    <div class="stat-sub">visualizaciones</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-plat">Instagram</div>
+    <div class="stat-num">8.886</div>
+    <div class="stat-sub">seguidores</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-plat">Singles</div>
+    <div class="stat-num">1+</div>
+    <div class="stat-sub">lanzamientos</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-plat">Base</div>
+    <div class="stat-num">Cali</div>
+    <div class="stat-sub">Colombia</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+   PALETA DE COLOR
+═══════════════════════════════ -->
+<section class="sec">
+  <div class="sec-label">Paleta de color</div>
+  <p class="pal-note">Paleta informativa del artista.</p>
+  <div class="pal-row" id="pal-row">
+    <div class="pal-swatch" style="background:#0A0A0A" data-hex="#0A0A0A" title="#0A0A0A"></div>
+    <div class="pal-swatch" style="background:#FFD700" data-hex="#FFD700" title="#FFD700"></div>
+    <div class="pal-swatch" style="background:#FFFFFF" data-hex="#FFFFFF" title="#FFFFFF"></div>
+    <div class="pal-swatch" style="background:#FFE44D" data-hex="#FFE44D" title="#FFE44D"></div>
+    <div class="pal-swatch" style="background:#1A1A1A" data-hex="#1A1A1A" title="#1A1A1A"></div>
+    <div class="pal-swatch" style="background:#F5F5F5" data-hex="#F5F5F5" title="#F5F5F5"></div>
+  </div>
+  <div style="font-size:10px;color:#999;margin-top:6px;font-family:monospace" id="pal-hex-list">#0A0A0A, #FFD700, #FFFFFF, #FFE44D, #1A1A1A, #F5F5F5</div>
+</section>
+
+<!-- ═══════════════════════════════
+   PLATAFORMAS Y REDES
+═══════════════════════════════ -->
+<section class="sec" style="border-bottom:none">
+  <div class="sec-label">Plataformas y redes</div>
+  <div class="links-grid" id="links-grid">
+    <a class="link-item" href="https://instagram.com/iam_thefrennzy" target="_blank" rel="noreferrer">
+      <span class="link-plat">Instagram</span>
+      <span class="link-handle">@iam_thefrennzy</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://open.spotify.com/artist/36Fv7Lcfqnhlksxu0TqxPB" target="_blank" rel="noreferrer">
+      <span class="link-plat">Spotify</span>
+      <span class="link-handle">TheFrennzy</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://youtube.com/@thefrennzy0811" target="_blank" rel="noreferrer">
+      <span class="link-plat">YouTube</span>
+      <span class="link-handle">@thefrennzy0811</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://music.apple.com/co/artist/thefrennzy/1738369208" target="_blank" rel="noreferrer">
+      <span class="link-plat">Apple Music</span>
+      <span class="link-handle">TheFrennzy</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://tiktok.com/@iam_thefrennzy" target="_blank" rel="noreferrer">
+      <span class="link-plat">TikTok</span>
+      <span class="link-handle">@iam_thefrennzy</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://tidal.com/artist/29940731" target="_blank" rel="noreferrer">
+      <span class="link-plat">Tidal</span>
+      <span class="link-handle">TheFrennzy</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://twitter.com/@elfrenesi08" target="_blank" rel="noreferrer">
+      <span class="link-plat">Twitter</span>
+      <span class="link-handle">@elfrenesi08</span>
+      <div class="link-dot"></div>
+    </a>
+    <a class="link-item" href="https://instagram.com/08.tfrnnzy.11" target="_blank" rel="noreferrer">
+      <span class="link-plat">IG Personal</span>
+      <span class="link-handle">@08.tfrnnzy.11</span>
+      <div class="link-dot"></div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ -->
+<footer class="a-footer">
+  <div>
+    <div class="a-footer-brand">TheFrennzy · PRESS KIT 2025–2026</div>
+  </div>
+  <div class="a-footer-contact">
+    Booking & Prensa: <span>CONTACTO · +57 3186804179</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════
+   WHATSAPP FLOATING BUTTON
+═══════════════════════════════ -->
+<a class="whatsapp-float" id="whatsapp-btn" href="https://wa.me/573186804179?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20TheFrennzy." target="_blank" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════
+   SCRIPT — SLIDER Y BIO TOGGLE
+═══════════════════════════════════════ -->
+<script>
+(function() {
+  // ── BANNER / SLIDER ──
+  var images = ["images/01.jpg", "images/02.jpg", "images/03.jpg", "images/04.png"];
+  var heroRight = document.getElementById('hero-right');
+  var dots = document.querySelectorAll('#hero-dots .hero-dot');
+  var arrowLeft = document.getElementById('arrow-left');
+  var arrowRight = document.getElementById('arrow-right');
+  var curSlide = 0;
+
+  function setBanner(i) {
+    curSlide = i;
+    if (heroRight) {
+      heroRight.style.backgroundImage = "url('" + images[i] + "')";
+    }
+    dots.forEach(function(d, di) {
+      d.classList.toggle('active', di === i);
+    });
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      setBanner(parseInt(dot.getAttribute('data-index')));
+    });
+  });
+
+  if (arrowLeft) {
+    arrowLeft.addEventListener('click', function() {
+      setBanner((curSlide - 1 + images.length) % images.length);
+    });
+  }
+  if (arrowRight) {
+    arrowRight.addEventListener('click', function() {
+      setBanner((curSlide + 1) % images.length);
+    });
+  }
+
+  // Rotación automática cada 6 segundos
+  setInterval(function() {
+    setBanner((curSlide + 1) % images.length);
+  }, 6000);
+
+})();
+
+// Bio toggle
+function toggleBio() {
+  var el = document.getElementById('bio-long');
+  var btn = document.getElementById('btn-bio');
+  if (!el || !btn) return;
+  el.classList.toggle('open');
+  btn.textContent = el.classList.contains('open') ? 'Leer menos ↑' : 'Leer más ↓';
+}
+</script>
+
+</body>
+</html>
